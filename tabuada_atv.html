@@ -1,0 +1,27 @@
+<meta charset = "UTF-8">
+
+<script>
+
+    function enter () {
+
+        document.write ("<br>");
+    }
+
+    function mostra (frase) {
+
+        document.write (frase);
+        enter ();
+    }
+
+    var digitado = parseInt (prompt ("Digite o número da tabuada que quer saber: "));
+
+    for (var multiplicador = 1; multiplicador <= 10; multiplicador++) { 
+        // variavel que vai incrementar / condiçao de repetiçao / incremento da variavel
+    
+        mostra (digitado + " x " + multiplicador + " = " + digitado * multiplicador);
+
+    }
+
+    mostra ("<br>FIM");
+
+</script>

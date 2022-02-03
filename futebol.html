@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function enter ()
+    {
+        document.write ("<br><br>");
+    }
+
+    function mostra (frase)
+    {
+        document.write (frase);
+        enter ();
+    }
+
+    var time = prompt ("Qual o nome do time?");
+    var anopassado = parseInt (prompt ("Qual o total de pontos do ano passado?"));
+    var vitorias = parseInt (prompt ("Qual o número de vitórias desse ano?"));
+    var empates = parseInt (prompt ("Qual o número de empates desse ano?"));
+
+    var pontos = (vitorias * 3) + empates;
+
+    mostra ("O total de pontos do time " + time + " é: " + pontos + "."); 
+
+    if (pontos > anopassado) {
+        mostra ("Seu time está melhor que o ano passado.");
+    }
+
+    if (pontos < anopassado) {
+        mostra ("Seu time está pior que o ano passado.");
+    }
+
+    if (pontos == anopassado) {
+        mostra ("Seu time está igual que o ano passado.");
+    }
+
+    mostra ("Quer calcular os pontos de outro time? Aperte F5.");
+</script>

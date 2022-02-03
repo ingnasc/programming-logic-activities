@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function enter () {
+
+        document.write ("<br>");
+    }
+
+    function mostra (frase) {
+
+        document.write (frase);
+        enter ();
+    }
+    
+    var contador = 30;
+    var limite = 40;
+    
+    while (contador <= limite) { //função que repete, tem que ter uma condição
+       if (contador != 33 && contador != 37) {
+
+        mostra (contador);
+        contador = contador + 1;
+       
+       } else {
+        
+        contador = contador + 1;
+        
+        }
+    }
+
+    mostra ("FIM");
+
+</script>
