@@ -5,75 +5,82 @@
 
 <script>
 
-	function sorteia () {
+	function sorteia() { 
 
-		return Math.round (Math.random () * 10);
+		return Math.round (Math.random() * 10); // retorna um valor aleatório
+
 	}
 
-	function sorteianumeros (quantidade) {
-		var segredos = [];
+	function sorteiaNumeros(quantidade) {
 
-		var numero = 1;
+		var segredos = []	// array, e essa variavel so existe aqui dentro, por isso tem o mesmo nome da outra
+		var contador = 1;
 
-		while (numero <= quantidade) {
-			var numeroaleatorio = sorteia ();
+		while(contador <= quantidade) {// condição
+			
+			var aleatorio = sorteia(); 
 
-			if (numeroaleatorio !== 0) {
-			var achou = false;
+			if(aleatorio !== 0) { // para não ter zero na lista
 
-			for (var posicao = 0; posicao < segredos.length; posicao++)
-			{
-				if (segredos [posicao] == numeroaleatorio)
-				{
-					achou = true;
-					break;
+				var achou = false;
+				var posicao = 1;
+
+				for (var posicao = 0; posicao < segredos.length; posicao++) { // evita repetição
+
+					if(segredos[posicao] == aleatorio) {
+						achou = true;
+						break;
+					}
 				}
-			}
 
-			if (achou == false) {
-			segredos.push (numeroaleatorio);
-			numero++;
-			}
+					if(achou == false) { // só coloca se não achou o elemento dentro do if anterior
 
+						segredos.push(aleatorio); // função empurrar, recebe da função sorteia()
+						contador++; // somando um número na variavel que controla a quantidade de vezes
+					}
 			}	
 		}
 
-		return segredos;
+		return segredos; // retorna os valores do array
 	}
 
-	var segredos = sorteianumeros (5);
+	// automatizando o sorteio
 
-	console.log (segredos);
+	var segredos = sorteiaNumeros(5);
 
-	var input = document.querySelector ("input");
-	input.focus ();
+	console.log(segredos);
 
-	function verifica () {
+	var input = document.querySelector("input"); // traz do HTML para o Javascript
+	input.focus(); // foco na caixinha
+	
+	function verifica() { 
 
+		// estrutura de repetiçao
 		var achou = false;
+		for(var posicao = 0; posicao < segredos.length; posicao++) { // length retorna a quantidade de elementos do array
+			if (input.value == segredos[posicao]) { // verifica em cada item, posição a posição
+			
+				alert("Você acertou!");
+				achou = true;
+				break; // para a repetição
 
-		for (var posicao = 0; posicao < segredos.length; posicao++) {
+			}
+		} // sem else para nao imprimir o erro a cada verificação
 		
-		if (input.value == segredos [posicao]) {
+		if(achou == false) { // exibe só se não acertou
 
-			alert ("Você acertou!");
-			achou = true;
-			break;
-		}
+			alert("Você errou!"); // só apresentar no final, depois de varrer tudo
 
 		}
 
-	if (achou == false) {
-		segredos.push (numeroaleatorio);
-		numero++;
-	}
-
-	input.value = "";
-	input.focus ();
+		input.value = ""; // recebe string vazia
+		input.focus(); 
 
 	}
 
+	// para usar a funçao verifica () ao clicar
 	var button = document.querySelector ("button");
-	button.onclick = verifica;
+	button.onclick = verifica; // sem parenteses para estar literalmente no click > para imprimir o codigo da funçao, e não executar
+
 
 </script>
