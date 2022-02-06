@@ -4,16 +4,16 @@
 
 <script>
 
-    var ingredientes = []; // lista de ingredientes
+    var ingredientes = []; // vetor lista de ingredientes
     var quantidade = parseInt(prompt("Quantos ingredientes você vai adicionar?"));
     var contador = 1; 
 
-    while (contador <= quantidade) { // condicao
+    while (contador <= quantidade) { // condicao para repeticao
 
         var ingrediente = prompt("Informe o ingrediente " + contador);
         var existe = false; 
 
-        for(posicao = 0; posicao < ingredientes.length; posicao++) { // looping, varre cada um que ja foi declarado
+        for(posicao = 0; posicao < ingredientes.length; posicao++) { // repeticao, varre cada um que ja foi declarado
             if(ingredientes[posicao] == ingrediente) {
                 existe = true;
                 break;
@@ -32,5 +32,8 @@
     }
 
     console.log(ingredientes);
+    
+    document.write(ingredientes);
+    document.write("<br>");
 
 </script>
