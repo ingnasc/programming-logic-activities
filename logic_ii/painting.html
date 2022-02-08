@@ -1,0 +1,32 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas'); 
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle = 'lightgrey'; // recebe uma atribuição, não é uma função
+    pincel.fillRect(0, 0, 600, 400); // onde o pincel vai atuar
+
+    pincel.fillStyle = 'pink'; 
+    pincel.fillRect(0, 0, 200, 400);
+
+    pincel.fillStyle = 'white'; 
+    pincel.fillRect(200, 0, 200, 400);
+
+    pincel.fillStyle = 'pink'; 
+    pincel.fillRect(400, 0, 200, 400);
+
+    pincel.fillStyle = 'yellow'; 
+    pincel.beginPath();
+    pincel.moveTo(300, 150);
+    pincel.lineTo(200, 250);
+    pincel.lineTo(400, 250);
+    pincel.fill();
+
+    pincel.fillStyle = 'brown';
+    pincel.beginPath ();
+    pincel.arc (300, 200, 20, 0, 2 * 3.14);
+    pincel.fill ();
+
+</script>
